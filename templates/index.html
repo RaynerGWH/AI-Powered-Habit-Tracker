@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="app-container">
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>My Habits</h2>
+            <button id="add-habit-btn" class="btn-primary">
+                <i class="fas fa-plus"></i> New Habit
+            </button>
+        </div>
+        <div class="habit-list" id="habit-list">
+            <!-- Habits will be loaded here -->
+        </div>
+    </div>
+    
+    <div class="content">
+        <div class="habit-form" id="habit-form">
+            <h3>Create New Habit</h3>
+            <form id="new-habit-form">
+                <div class="form-group">
+                    <label for="habit-name">Habit Name</label>
+                    <input type="text" id="habit-name" placeholder="What habit would you like to track?" required>
+                </div>
+                <div class="form-group">
+                    <label for="habit-description">Description (optional)</label>
+                    <textarea id="habit-description" placeholder="Add details about your habit"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="cancel-habit" class="btn-secondary">Cancel</button>
+                    <button type="submit" class="btn-primary">Create Habit</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="habit-form" id="edit-habit-form">
+            <h3>Edit Habit</h3>
+            <form id="update-habit-form">
+                <input type="hidden" id="edit-habit-id">
+                <div class="form-group">
+                    <label for="edit-habit-name">Habit Name</label>
+                    <input type="text" id="edit-habit-name" placeholder="Habit name" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-habit-description">Description (optional)</label>
+                    <textarea id="edit-habit-description" placeholder="Description"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="cancel-edit" class="btn-secondary">Cancel</button>
+                    <button type="submit" class="btn-primary">Save Changes</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="habit-tracking">
+            <div class="tracking-header">
+                <h3>Daily Tracking</h3>
+                <div class="date-navigator">
+                    <button id="prev-day" class="btn-icon"><i class="fas fa-chevron-left"></i></button>
+                    <span id="current-date">Today</span>
+                    <button id="next-day" class="btn-icon"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+            <div class="habit-toggles" id="habit-toggles">
+                <!-- Habit toggles will be loaded here -->
+            </div>
+        </div>
+        
+        <div class="ai-insights" id="ai-insights">
+            <h3>AI Insights</h3>
+            <p class="placeholder-text">AI insights will be available after you track habits for a few days.</p>
+            <!-- Placeholder for AI insights - will be implemented in Day 3 -->
+            <div class="chart-container">
+                Charts coming in Day 3
+            </div>
+        </div>
+        
+        <div class="habit-detail" id="habit-detail">
+            <!-- Habit details will be shown here -->
+        </div>
+    </div>
+</div>
+{% endblock %}
